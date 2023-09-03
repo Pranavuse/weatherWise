@@ -1,0 +1,47 @@
+/* eslint-disable jsx-a11y/alt-text */
+import React from 'react';
+
+export default function Result({weatherData}) {
+  return (
+    
+    <div className='container mt-4'>
+      <h1 className="mb-3 fs-1 text-center">{weatherData.name}</h1>
+        <div className="mb-3">
+          <h5 className="text-center mb-4">cloudy</h5>
+        </div>
+
+        <div className="row container border">
+          <div className="col-md-6">
+            <h3 className="result-subheader">Max Temperature: °C</h3>
+            <p className="result-text">Feels Like: °C</p>
+            <p className="result-text">Humidity: %</p>
+            <p className="result-text">Wind Speed:  m/s</p>
+
+            <p>Weather type</p>
+          </div>
+          <div className="col-md-6 text-end">
+            <h3 className="result-subheader">Min Temperature: °C</h3>
+            <p className="result-description">{weatherData.description}</p>
+          </div>
+        </div>
+
+        <div className="d-flex justify-content-between mb-4">
+          <div className="text-center mx-3">
+            <p>Wind:  m/s</p>
+          </div>
+          <div className="text-center mx-3">
+            <p>Country: </p>
+          </div>
+          <div className="text-center mx-3">
+            <p>Sunrise: </p>
+          </div>
+          <div className="text-center mx-3">
+            <p>Sunset: </p>
+          </div>
+        </div>
+        </div>
+      
+      
+    
+  )
+}

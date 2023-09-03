@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 76.5667,
+        "lat": 28.9
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 39.05,
+        "feels_like": 39.87,
+        "temp_min": 39.05,
+        "temp_max": 39.05,
+        "pressure": 1003,
+        "humidity": 26,
+        "sea_level": 1003,
+        "grnd_level": 979
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 3.39,
+        "deg": 330,
+        "gust": 4.27
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1693475701,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1693441857,
+        "sunset": 1693487881
+    },
+    "timezone": 19800,
+    "id": 1258076,
+    "name": "Rohtak",
+    "cod": 200
+}

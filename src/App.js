@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Daily from "./components/Daily";
+// import Hourly from "./components/Hourly";
+import Navbar from "./components/Navbar";
+import WeatherSearch from "./components/WeatherSearch";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar title="WeatherWise" />
+      <WeatherSearch />
+      {/* <Hourly/> */}
+      <div className="container my-4 border">
+      <h4 className="container text-center my-3">4 Days Weather Forecast</h4>
+      <h6 className="container text-center text-secondary" style={{marginBottom: '30px',}}>Buy Premium to access this section</h6>
+        <Daily />
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,28 @@
+<div className="row">
+            <div className="col-md-6">
+              <h2 className="result-subheader">
+                Max Temperature:°C
+              </h2>
+              <p className="result-text">
+                Feels Like: °C
+              </p>
+              <p className="result-text">
+                Humidity: %
+              </p>
+              <p className="result-text">
+                Wind Speed:  m/s
+              </p>
+
+              <p>Weather type</p>
+            </div>
+            <div className="col-md-6 text-end">
+              <h2 className="result-subheader">
+                Min Temperature: °C
+              </h2>
+              <p className="result-description">
+                
+              </p>
+            </div>
+            
+         
+          </div>
