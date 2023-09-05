@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Navbar title="WeatherWise" />
+      <h3 className="container my-5 text-center">Welcome to WeatherWise: Place to search weather</h3>
       <WeatherSearch />
       {/* <Hourly/> */}
       <div className="container my-4 border">

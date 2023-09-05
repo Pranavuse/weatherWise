@@ -12,6 +12,7 @@ export default function Result({ weatherData }) {
 
       // Update the background image of the body element
       document.body.style.backgroundImage = `url(${background})`;
+  
       document.body.style.color="white"
     }
     else{
