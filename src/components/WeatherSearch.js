@@ -1,56 +1,38 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Result from "./Result";
 import { DotSpinner } from '@uiball/loaders'
 
 export default function WeatherSearch() {
+  const [search, setSearch] = useState("Type here to search");
+  const [weather, setWeather] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    
-    const[search, setSearch] = useState("Type here to search");
-    const[weather, setWeather] = useState([]);
-    const[loading, setLoading] = useState(false)
-    
-    const handleSearchChange=(event)=>{
-        setSearch(event.target.value)
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const delhi = () => {
+    setSearch('Delhi');
+  };
+
+  const api_key = "6afa2e7606c18a4e48270ffd081e86a3";
+
+  const handleButtonClick = () => {
+    if (search !== "" && search !== "Type here to search") {
+      setLoading(true);
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&id=524901&appid=${api_key}&units=metric`)
+        .then((response) => {
+          setWeather(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Weather not found");
     }
-     
-    const delhi=()=>{
-      console.log("delhi")
-      setSearch('Delhi')
-    }
-    // useEffect(() => {
-    //   console.log("Search state has changed:", search);
-    // }, [search]); 
-
-  const api_key="952c139d7515797a71e5d1ff61229211";
-
-    const handleButtonClick=()=>{
-      
-        console.log("button clicked");
-
-        if(search!==""&&search!=="Type here to search"){
-        
-          setLoading(true)
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&id=524901&appid=${api_key}&units=metric`)
-        .then(
-          (response)=>{
-                setWeather(response.data)
-                console.log(response.data)
-                setLoading(false)
-            }
-        ).catch(
-            (error)=>{
-                console.log(error)
-            }
-        )
-        }
-        else{
-            alert("Weather not found")
-        }
-
-
-    }
+  };
 
   return (
     <div className="container mt-4">
@@ -63,7 +45,7 @@ export default function WeatherSearch() {
           <button className="btn btn-outline-primary mx-3">UK</button>
         </div>
 
-        <div className="input-group mb-4">
+        <div className="input-group input-group-sm mb-4">
           <input
             type="text"
             className="form-control"
@@ -72,21 +54,20 @@ export default function WeatherSearch() {
             onChange={handleSearchChange}
           />
           <datalist id="datalistOptions">
-            <option value="San Francisco"/>
-            <option value="New York"/>
-            <option value="Seattle"/>
-            <option value="Los Angeles"/>
-            <option value="Chicago"/>
-         </datalist>
+            <option value="San Francisco" />
+            <option value="New York" />
+            <option value="Seattle" />
+            <option value="Los Angeles" />
+            <option value="Chicago" />
+          </datalist>
           <button className="btn btn-primary" type="button" onClick={handleButtonClick}>
             Search
           </button>
         </div>
         {loading ? <DotSpinner size={45} color="#231F20" /> : null}
-    
-    <Result weatherData={weather}/>
-        
-    </div>
+
+        <Result weatherData={weather} />
+      </div>
     </div>
   );
 }
